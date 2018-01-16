@@ -33,7 +33,10 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/Reporte2', 'ReporteController@reporte2');
 	Route::get('/Reporte3', 'ReporteController@reporte3');
 	Route::get('/Reporte4', 'ReporteController@reporte4');
+	Route::get('/Reporte5', 'ReporteController@reporte5');
 	Route::post('DatosActividadReporte3/', 'ReporteController@DatosActividadReporte3');
+	Route::post('DatosReporte5/', 'ReporteController@DatosReporte5');
+	
 	Route::get('/Cerrar', 'Actividadcontroller@Cerrar');
 
 	Route::post('/Reporte/reporteTipoPoblacional/', 'ReporteController@reportePoblacional');

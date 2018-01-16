@@ -316,6 +316,29 @@ class ReporteController extends Controller
 		return view('reporte4');
     }
 
+    public function reporte5()
+    {		
+		return view('reporte5');
+    }
+
+    public function DatosReporte5(Request $request){
+    	if ($request->ajax()) { 
+    		$validator = Validator::make($request->all(), [
+    			'Fecha_Inicio' => 'required',
+    			'Fecha_Fin' => 'required',
+    			]);
+
+	        if ($validator->fails()){
+	            return response()->json(array('status' => 'error', 'errors' => $validator->errors()));
+	        }else{
+	        	$consulta=ActividadGestor::with('localidad','persona','parque','personaProgramador', 'GestorActividadEjetematica', 'GestorActividadEjetematica.eje', 'GestorActividadEjetematica.tematica', 'GestorActividadEjetematica.actividad', 'calificaciomServicio')->whereBetween('Fecha_Ejecucion',array($request['Fecha_Inicio'], $request['Fecha_Fin']))->get();
+	        	return $consulta;
+			}
+		}else{
+			return response()->json(["Sin acceso"]);
+		}    	
+    }
+
 }
 
 

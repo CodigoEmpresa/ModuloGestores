@@ -354,6 +354,12 @@
 
                   @endif
 
+                  @if($_SESSION['Usuario'][9] == 1) 
+
+                      <li class=”{{ Request::is( 'Reporte5') ? 'active' : '' }}”><a href="{{ URL::to( 'Reporte5') }}">Reporte de la Calificación de las Ejecuciones</a></li>
+
+                  @endif
+
                 </ul>
 
               </li>
