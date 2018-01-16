@@ -1,0 +1,10 @@
+/vendor
+/workbench
+/node_modules
+/public/storage
+/public/Img/EvidenciaArchivo
+/public/Img/EvidenciaFotografica
+Homestead.yaml
+Homestead.json
+composer.lock
+.env
